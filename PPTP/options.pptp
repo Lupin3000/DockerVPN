@@ -1,0 +1,54 @@
+# Name of the local system for authentication purposes 
+name pptpd
+
+# Strip the domain prefix from the username before authentication.
+#chapms-strip-domain
+
+# Encryption
+refuse-pap
+refuse-chap
+refuse-mschap
+require-mschap-v2
+# require-mppe-128
+
+# OpenSSL licensed ppp-2.4.1 fork with MPPE only, kernel module mppe.o
+#-chap
+#-chapms
+#+chapms-v2
+#mppe-40
+#mppe-128
+#mppe-stateless
+
+# Specifies the primary DNS address and secondary DNS address.
+ms-dns 8.8.8.8
+ms-dns 8.8.4.4
+
+# If pppd is acting as a server for Microsoft Windows or "Samba" clients
+#ms-wins 10.0.0.3
+#ms-wins 10.0.0.4
+
+# Add an entry to this system's ARP [Address Resolution Protocol]
+proxyarp
+
+# Specify the local IP address here.
+#10.8.0.100
+
+# Enable connection debugging facilities.
+#debug
+
+# Print out all the option values which have been set.
+#dump
+
+# Create a UUCP-style lock file for the pseudo-tty to ensure exclusive
+lock
+
+# Disable BSD-Compress compression
+nobsdcomp 
+
+# Disable Van Jacobson compression 
+novj
+novjccomp
+
+# turn off logging to stderr, since this may be redirected to pptpd, 
+nologfd
+
